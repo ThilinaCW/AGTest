@@ -1,4 +1,10 @@
+using AGTest.Server.DbContext;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite("Data Source=app.db"));
 
 // Add services to the container.
 
